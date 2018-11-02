@@ -34,6 +34,26 @@ public class User implements Serializable {
     @Column(name = "password", length = 100)
     public String password;
     
+    @Column(name = "status")
+    @Enumerated(value = EnumType.STRING)
+    private UserStatus status;
+    
+    @Column(name = "mobile_number", length = 20)
+    private String mobileNumberPrimary;
+    
+    @Column(name = "licence_no", length = 30)
+    private String licenceNo;
+    
+    @Column(name = "user_role")
+    @Enumerated(value = EnumType.STRING)
+    private UserRole userRole;
+    
+    @Column(name="creation_time")
+    private LocalDateTime creationTime;
+    
+    @Column(name="modification_time")
+    private LocalDateTime modificationTime;
+    
     public String getEmail() {
 		return email;
 	}
@@ -114,24 +134,6 @@ public class User implements Serializable {
 		this.email = email;
 	}
 
-	@Column(name = "user_status")
-    @Enumerated(value = EnumType.STRING)
-    private UserStatus status;
-    
-    @Column(name = "mobile_number", length = 20)
-    private String mobileNumberPrimary;
-    
-    @Column(name = "licence_no", length = 30)
-    private String licenceNo;
-    
-    @Column(name = "user_role")
-    @Enumerated(value = EnumType.STRING)
-    private UserRole userRole;
-    
-    @Column(name="creation_time")
-    private LocalDateTime creationTime;
-    
-    @Column(name="modification_time")
-    private LocalDateTime modificationTime;
+	
 
 }

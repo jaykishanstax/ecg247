@@ -18,7 +18,7 @@ public class UserDto {
     
     public String email;
     
-	public String fullName;
+	public String name;
     
     public String password;
     
@@ -51,12 +51,12 @@ public class UserDto {
 		this.email = email;
 	}
 
-	public String getFullName() {
-		return fullName;
+	public String getName() {
+		return name;
 	}
 
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
+	public void setName(String fullName) {
+		this.name = fullName;
 	}
 
 	public String getPassword() {

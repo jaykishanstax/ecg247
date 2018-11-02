@@ -29,7 +29,8 @@ public class UserServiceImpl implements IUserService {
 			throw new RestClientException("User Already exisit");
 		} else {
 			user = new User();
-			user.setFullName(userDto.getFullName());
+			user.setFullName(userDto.getName());
+			// user.setFullName(userDto.getName());
 			// user.setPassword(passwordEncoder.encode(userDto.getPassword()));
 			user.setPassword(userDto.getPassword());
 			user.setEmail(userDto.getEmail());
