@@ -28,7 +28,7 @@ public class UserController {
 	private IUserService userService;
 
 	@PostMapping(value = "/login")
-	public ResponseEntity login(@RequestBody LoginDto loginDto, @RequestHeader(value = "Origin") String origin) {
+	public ResponseEntity login(@RequestBody LoginDto loginDto) {
 		User user = loginService.login(loginDto);
 		if (user == null) {
 			return ResponseEntity.ok("Email id or password is invalid");
