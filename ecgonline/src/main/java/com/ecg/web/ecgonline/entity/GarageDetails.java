@@ -16,25 +16,24 @@ public class GarageDetails {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private Long id;
     @Column(name = "shop_reg_no")
 	private String shopRegistrationNumber; 
     @Column(name = "shop_name")
 	private String shopName; 
     @Column(name = "shop_add")
 	private String shopAddress; 
-    @Column(name = "creation_time")
-	private int ownerId;
-    @Column(name = "creation_time")
+    @Column(name = "owner_id")
+	private Long ownerId;
+    @Column(name = "creation_time", updatable = false, insertable = false)
     private LocalDateTime creationTime;
-    @Column(name = "modification_time")
+    @Column(name = "modification_time", updatable = false, insertable = false)
     private LocalDateTime modificationTime;
     
-    
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getShopRegistrationNumber() {
@@ -55,10 +54,10 @@ public class GarageDetails {
 	public void setShopAddress(String shopAddress) {
 		this.shopAddress = shopAddress;
 	}
-	public int getOwnerId() {
+	public Long getOwnerId() {
 		return ownerId;
 	}
-	public void setOwnerId(int ownerId) {
+	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
 	}
 	public LocalDateTime getCreationTime() {

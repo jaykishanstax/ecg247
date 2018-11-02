@@ -4,18 +4,18 @@ import java.time.LocalDateTime;
 
 public class GarageDetailsDto {
 
-	private int id;
+	private Long id;
 	private String shopRegistrationNumber; 
 	private String shopName; 
 	private String shopAddress; 
-	private int ownerId;
+	private Long ownerId;
     private LocalDateTime creationTime;
+	private LocalDateTime modificationTime;
     
-    
-    public int getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getShopRegistrationNumber() {
@@ -36,10 +36,10 @@ public class GarageDetailsDto {
 	public void setShopAddress(String shopAddress) {
 		this.shopAddress = shopAddress;
 	}
-	public int getOwnerId() {
+	public Long getOwnerId() {
 		return ownerId;
 	}
-	public void setOwnerId(int ownerId) {
+	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
 	}
 	public LocalDateTime getCreationTime() {
@@ -54,6 +54,5 @@ public class GarageDetailsDto {
 	public void setModificationTime(LocalDateTime modificationTime) {
 		this.modificationTime = modificationTime;
 	}
-	private LocalDateTime modificationTime;
 	
 }
