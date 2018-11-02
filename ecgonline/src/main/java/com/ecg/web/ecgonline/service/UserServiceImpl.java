@@ -2,16 +2,18 @@ package com.ecg.web.ecgonline.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientException;
 
 import com.ecg.web.ecgonline.entity.User;
 import com.ecg.web.ecgonline.entity.dto.UserDto;
 import com.ecg.web.ecgonline.repository.UserRepository;
 
+@Service
 public class UserServiceImpl implements IUserService {
 	
-	@Autowired
-	private PasswordEncoder passwordEncoder;
+	//@Autowired
+	//private PasswordEncoder passwordEncoder;
 	
 	@Autowired
 	private UserRepository userRepository;
@@ -26,7 +28,8 @@ public class UserServiceImpl implements IUserService {
 		} else {
 			user = new User();
 			user.setUserName(userDto.getUserName());
-			user.setPassword(passwordEncoder.encode(userDto.getPassword()));
+			// user.setPassword(passwordEncoder.encode(userDto.getPassword()));
+			user.setPassword(userDto.getPassword());
 			user.setEmail(userDto.getEmail());
 			user.setMobileNumberPrimary(userDto.getMobileNumberPrimary());
 			user.setUserRole(userDto.getUserRole());

@@ -21,7 +21,7 @@ import com.ecg.web.ecgonline.service.IUserService;
 
 
 @RestController
-@RequestMapping("api/")
+@RequestMapping("api")
 public class UserController {
 
 	@Autowired
@@ -30,7 +30,7 @@ public class UserController {
 	@Autowired
 	private IUserService userService;
 
-	 @RequestMapping(value = "ping", method = RequestMethod.GET)
+	 @RequestMapping(value = "/ping", method = RequestMethod.GET)
 	    public ResponseEntity ping(final HttpServletRequest request) {
 	        return ResponseEntity.ok("pong");
 	    }
