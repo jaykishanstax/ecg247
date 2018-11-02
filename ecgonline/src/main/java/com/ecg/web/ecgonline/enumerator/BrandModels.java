@@ -15,7 +15,7 @@ public enum BrandModels {
     public static BrandModels valueFromName(String brandName) {
     	for(BrandModels brand : BrandModels.values())
         {
-      	  if(brand.getBrandName().equals(brandName))
+      	  if(brand.getBrandName().equalsIgnoreCase(brandName))
       		  return brand;
         }
         return null;
