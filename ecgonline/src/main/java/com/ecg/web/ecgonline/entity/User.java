@@ -34,7 +34,87 @@ public class User implements Serializable {
     @Column(name = "password", length = 100)
     public String password;
     
-    @Column(name = "user_status")
+    public String getEmail() {
+		return email;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public UserStatus getStatus() {
+		return status;
+	}
+
+	public void setStatus(UserStatus status) {
+		this.status = status;
+	}
+
+	public String getMobileNumberPrimary() {
+		return mobileNumberPrimary;
+	}
+
+	public void setMobileNumberPrimary(String mobileNumberPrimary) {
+		this.mobileNumberPrimary = mobileNumberPrimary;
+	}
+
+	public String getLicenceNo() {
+		return licenceNo;
+	}
+
+	public void setLicenceNo(String licenceNo) {
+		this.licenceNo = licenceNo;
+	}
+
+	public UserRole getUserRole() {
+		return userRole;
+	}
+
+	public void setUserRole(UserRole userRole) {
+		this.userRole = userRole;
+	}
+
+	public LocalDateTime getCreationTime() {
+		return creationTime;
+	}
+
+	public void setCreationTime(LocalDateTime creationTime) {
+		this.creationTime = creationTime;
+	}
+
+	public LocalDateTime getModificationTime() {
+		return modificationTime;
+	}
+
+	public void setModificationTime(LocalDateTime modificationTime) {
+		this.modificationTime = modificationTime;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	@Column(name = "user_status")
     @Enumerated(value = EnumType.STRING)
     private UserStatus status;
     
