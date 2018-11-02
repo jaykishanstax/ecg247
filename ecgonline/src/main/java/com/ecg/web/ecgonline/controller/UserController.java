@@ -47,7 +47,7 @@ public class UserController {
 	        }
 	    }
 	 
-	 @PostMapping(value = "/registration")
+	 	@PostMapping(value = "/registration")
 	    public ResponseEntity registerUserAccount(@RequestBody @Valid UserDto user,
 	                                                               HttpServletRequest request) {
 	        User registeredUser = userService.registerNewUserAccount(user);
