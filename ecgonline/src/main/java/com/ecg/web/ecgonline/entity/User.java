@@ -29,7 +29,7 @@ public class User implements Serializable {
     public String email;
     
     @Column(name = "name", length = 100)
-    public String userName;
+    public String fullName;
     
     @Column(name = "password", length = 100)
     public String password;
@@ -46,12 +46,12 @@ public class User implements Serializable {
 		this.id = id;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getFullName() {
+		return fullName;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
 	}
 
 	public String getPassword() {

@@ -18,6 +18,23 @@ public class UserDto {
     
     public String email;
     
+	public String fullName;
+    
+    public String password;
+    
+    private UserStatus status;
+    
+    private String mobileNumberPrimary;
+    
+    private String licenceNo;
+    
+    private UserRole userRole;
+    
+    private LocalDateTime creationTime;
+    
+    private LocalDateTime modificationTime;
+
+
     public int getId() {
 		return id;
 	}
@@ -34,12 +51,12 @@ public class UserDto {
 		this.email = email;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getFullName() {
+		return fullName;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
 	}
 
 	public String getPassword() {
@@ -97,22 +114,5 @@ public class UserDto {
 	public void setModificationTime(LocalDateTime modificationTime) {
 		this.modificationTime = modificationTime;
 	}
-
-	public String userName;
-    
-    public String password;
-    
-    private UserStatus status;
-    
-    private String mobileNumberPrimary;
-    
-    private String licenceNo;
-    
-    private UserRole userRole;
-    
-    private LocalDateTime creationTime;
-    
-    private LocalDateTime modificationTime;
-
 
 }

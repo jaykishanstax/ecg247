@@ -22,12 +22,14 @@ public class UserServiceImpl implements IUserService {
 	public User registerNewUserAccount(UserDto userDto) {
 
 		User user = userRepository.findUserByEmail(userDto.getEmail());
+		
+		User user2 = userRepository.findUserByMobileNumberPrimary(userDto.getMobileNumberPrimary());
 
-		if (user != null) {
+		if (user != null || user2 != null) {
 			throw new RestClientException("User Already exisit");
 		} else {
 			user = new User();
-			user.setUserName(userDto.getUserName());
+			user.setFullName(userDto.getFullName());
 			// user.setPassword(passwordEncoder.encode(userDto.getPassword()));
 			user.setPassword(userDto.getPassword());
 			user.setEmail(userDto.getEmail());
