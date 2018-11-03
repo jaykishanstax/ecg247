@@ -27,7 +27,7 @@ public class LoginServiceImpl implements ILoginService {
 		}
 		Authentication request = new UsernamePasswordAuthenticationToken(email, loginDto.getPassword());
 		User userByEmail = userRepository.findUserByEmail(email);
-		if (request.getCredentials().toString().equals(userByEmail.getEmail())) {
+		if (null != userByEmail && request.getPrincipal().toString().equals(userByEmail.getEmail())) {
 			return userByEmail;
 		} else {
 			return null;

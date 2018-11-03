@@ -148,6 +148,21 @@ public class ServiceRequestController {
 		return ResponseEntity.ok(response);
 	}
 	
+	@GetMapping(path = "/user/{userId}")
+	public ResponseEntity<GenericResponse<List<ServiceRequestDetailsDto>>> getAllServiceRequestByUser(@PathVariable(value="userId") Long userId,
+			final HttpServletRequest request) {
+		GenericResponse<List<ServiceRequestDetailsDto>> response = new GenericResponse<List<ServiceRequestDetailsDto>>();
+		List<ServiceRequestDetailsDto> serviceRequestDetailsDtoList =  new ArrayList<>();
+		List<ServiceRequestDetails> serviceRequestDetails = serviceRequest.getAllServiceRequestByUserId(userId);
+		serviceRequestDetails.stream().forEach(sr -> {
+			ServiceRequestDetailsDto serviceRequestDetailsDto = new ServiceRequestDetailsDto();
+			BeanUtils.copyProperties(sr, serviceRequestDetailsDto);
+			serviceRequestDetailsDtoList.add(serviceRequestDetailsDto);
+		});
+		response.setData(serviceRequestDetailsDtoList);
+		return ResponseEntity.ok(response);
+	}
+	
 	@GetMapping(path = "/{serviceId}")
 	public ResponseEntity<GenericResponse<ServiceRequestDetailsDto>> getServiceRequest(@PathVariable(value="serviceId") Long serviceId,
 			final HttpServletRequest request) {

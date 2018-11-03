@@ -19,4 +19,6 @@ public interface IServiceRequest {
 
 	List<ServiceRequestDetails> getAllServiceRequestByGarageId(Long garageId);
 
+	List<ServiceRequestDetails> getAllServiceRequestByUserId(Long userId);
+
 }

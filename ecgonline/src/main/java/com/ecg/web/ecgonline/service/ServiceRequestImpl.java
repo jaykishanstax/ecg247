@@ -57,4 +57,9 @@ public class ServiceRequestImpl implements IServiceRequest {
 		return serviceRequestDetailsRepository.findByGarageId(garageId);
 	}
 
+	@Override
+	public List<ServiceRequestDetails> getAllServiceRequestByUserId(Long userId) {
+		return serviceRequestDetailsRepository.findByUserId(userId);
+	}
+
 }

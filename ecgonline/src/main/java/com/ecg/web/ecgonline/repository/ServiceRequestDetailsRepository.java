@@ -11,5 +11,7 @@ public interface ServiceRequestDetailsRepository extends PagingAndSortingReposit
 
 	List<ServiceRequestDetails> findByGarageId(Long garageId);
 
+	List<ServiceRequestDetails> findByUserId(Long userId);
+
 }
 

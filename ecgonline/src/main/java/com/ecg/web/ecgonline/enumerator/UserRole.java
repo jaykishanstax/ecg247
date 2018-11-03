@@ -1,7 +1,7 @@
 package com.ecg.web.ecgonline.enumerator;
 
 public enum UserRole {
-	SUPERADMIN("Superadmin"), ADMIN("Admin"), SUPERVISOR("Supervisor"), SALESMAN("Salesman");
+	ADMIN("Ecg247 Admin"), USER("End User"), OWNER("Owner"), PICKUP_USER("Pick Up User");
     private String userRole;
 
     UserRole(String userRole) {
