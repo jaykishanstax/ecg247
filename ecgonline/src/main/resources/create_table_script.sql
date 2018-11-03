@@ -13,7 +13,7 @@ CREATE TABLE `user` (
   `mobile_number` varchar(20) DEFAULT NULL,
   `status` tinyint(1) DEFAULT NULL,
   `licence_no` varchar(30) DEFAULT NULL,
-  `role_id` int(11) DEFAULT NULL,
+  `user_role` varchar(30) DEFAULT NULL,
   `creation_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `modification_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
