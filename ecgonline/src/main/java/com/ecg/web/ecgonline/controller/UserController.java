@@ -33,7 +33,7 @@ public class UserController {
 		if (user == null) {
 			return ResponseEntity.ok("Email id or password is invalid");
 		} else {
-			return ResponseEntity.ok("login");
+			return ResponseEntity.ok(user);
 		}
 	}
 
